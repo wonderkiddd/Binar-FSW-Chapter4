@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "agil",
-    "database": "db-cars",
+    "database": "db-cars-agil",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
