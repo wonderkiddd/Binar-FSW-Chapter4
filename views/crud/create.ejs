@@ -1,0 +1,49 @@
+<%- include("../partials/head") %>
+
+    <body>
+        <div class="main-create">
+            <h1>Add New Car</h1>
+            <form class="form-main" name="inputForm" action="/cars" method="POST" enctype="multipart/form-data">
+
+                <div class="form-style">
+                    <div class="finput">
+                        <p style="width: 25%;">Nama<span style="color: red;">*</span></p>
+                        <input class="input-style" type="text" name="name" required placeholder="Avanza"><br>
+                    </div>
+
+                    <div class="finput">
+                        <p style="width: 25%;">Sewa Per Hari<span style="color: red;">*</span></p>
+                        <input class="input-style" type="number" name="price" required placeholder="100000000"><br>
+                    </div>
+
+                    <div class="finput">
+                        <p style="width: 25%;">Ukuran<span style="color: black;">*</span></p>
+                        <select class="input-style" name="size" id="">
+                            <option value="small">Small Car</option>
+                            <option value="medium">Medium Car</option>
+                            <option value="large">Large Car</option>
+                        </select>
+                    </div>
+
+                    <div class="finput">
+                        <p style="width: 25%;">Gambar<span style="color: red;">*</span></p>
+                        <div class="upload">
+                            <input type="file" name="image" required placeholder="10">
+                            <i style="margin-right: 20px; color: #333;" class="fas fa-upload"></i>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 20px;">
+                    <a href="/">
+                        <p class="cancel-button">Cancel</p>
+                    </a>
+                    <button class="save-button" type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+
+    </body>
+
+    </html>

@@ -1,0 +1,78 @@
+<%- include("../partials/head") %>
+
+    <body>
+
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; width: 85%; max-width: 1440px; ">
+                <h4 style="color: black;">List Cars</h4>
+                <a href="/cars/create">
+                    <button style="background-color: #0D28A6; display: flex; gap: 10px;">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Add New Car</span>
+                    </button>
+                </a>
+            </div>
+            <div class="list">
+                <a href="/">
+                    <button class="filter-button" style="background-color: #aab9ff;">All</button>
+                </a>
+                <a href="/?filter=small">
+                    <button class="filter-button">Small</button>
+                </a>
+                <a href="/?filter=medium">
+                    <button class="filter-button">Medium</button>
+                </a>
+                <a href="/?filter=large">
+                    <button class="filter-button">Large</button>
+                </a>
+            </div>
+
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; width: 100%; align-items: center;">
+                <% cars.map((productcars, index)=> {%>
+
+                    <div class="card">
+                        <div>
+                            <img src="<%= productcars.pict %>" alt="<%= productcars.name %>"
+                                style="height: 200px; aspect-ratio: 5/4; border-radius: 10px; ">
+                        </div>
+                        <div class="item-card">
+                            <div>
+                                <%= productcars.name %>
+                            </div>
+                            <div>
+                                <b>
+                                    Rp. <%= productcars.price %> / hari
+                                </b>
+                            </div>
+                            <div>
+                                <i class="fa-regular fa-clock"></i>
+                                <span style="color: gray;">Updated at 9 November, 23.00 WIB</span>
+                            </div>
+                        </div>
+                        <div class="button-gap">
+                            <a href="/cars/delete/<%= productcars.id %>">
+                                <button class="delete-button" style="padding: 10px 25px 10px 25px;">
+                                    <i class="fa-solid fa-trash"></i>
+                                    <span>Delete</span>
+                                </button>
+                            </a>
+                            <a href="/cars/edit/<%= productcars.id %>">
+                                <button style="padding: 10px 25px 10px 25px;">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span>Edit</span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <% }) %>
+            </div>
+        </div>
+
+        <script></script>
+
+    </body>
+
+    </html>
